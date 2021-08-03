@@ -1,0 +1,17 @@
+{
+  "name": "ioc-experiment",
+  "version": "1.0.0",
+  "description": "IoC small library",
+  "scripts": {
+    "test": "ts-node ./ioc.test.ts",
+    "test::watch": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "2.0.12",
+    "prettier": "2.3.2",
+    "ts-node": "10.1.0"
+  }
+}
