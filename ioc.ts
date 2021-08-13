@@ -1,4 +1,6 @@
-export const createContainer = (creators: any) => {
+export const createContainer = <S = any>(
+    creators: {[K in keyof S]: (ctx: any) => S[K]},
+) => {
     // @ts-ignore
     const mapped = Object.entries(creators)
         .map(([key, creator]) => {
@@ -11,5 +13,5 @@ export const createContainer = (creators: any) => {
             return o;
         }, {});
 
-    return mapped;
+    return mapped as {[K in keyof S]: () => S[K]};
 };

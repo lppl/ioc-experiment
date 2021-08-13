@@ -40,18 +40,6 @@ const container = createContainer({
 // And then we can initiate required behaviour with funcion call 
 container.pinger().ping('http://somesite.io/sayhello')
 
-
-// I think to make typesafe system It would be needed to rewrite types with generics
-type GivenCreatorsType = {
-    logger: (ctx: CtxWithConfig) => LoggerType,
-    pinger: (ctx: CtxWithLogger) => PingerType,
-}
-// would become
-type ReturnContainerType = {
-    logger: () => LoggerType,
-    pinger: () => PingerType,
-}
-
 // Also it would be great to combine CtxWithConfig with CtxWithLogger types 
 // to confirm that all expected context have been created but I dont think that
 // this check could be done at compilation time.

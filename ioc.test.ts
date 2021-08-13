@@ -50,7 +50,7 @@ const container = createContainer({
 });
 
 const url = 'http://cool.job.offers.com/api-for-count-me-in';
-console.assert(container.pinger().ping(url) === url);
+console.assert(container.pinger().ping(url) === undefined);
 console.assert(container.config().logLevel === 'verbose');
 
 console.log('\n\n===============\n\n');
