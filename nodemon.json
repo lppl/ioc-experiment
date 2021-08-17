@@ -1,5 +1,5 @@
 {
-  "watch": ["ioc.ts", "ioc.test.ts"],
+  "watch": ["ioc.ts", "ioc.test.ts", "example/*"],
   "ext": "ts",
   "exec": "ts-node ./ioc.test.ts"
 }

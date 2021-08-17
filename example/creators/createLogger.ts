@@ -1,11 +1,11 @@
-import {ConfigType, LoggerType} from '../types';
+import {LoggerType, WithConfig} from '../types';
 
-export function createLogger(ctx: {config: () => ConfigType}): LoggerType {
-    return {
+export function createLogger(ctx: WithConfig): () => LoggerType {
+    return () => ({
         log: (...args: unknown[]) => {
             if (ctx.config().logLevel === 'verbose') {
                 console.log('CUSTOM LOGGER: ', ...args);
             }
         },
-    };
+    });
 }

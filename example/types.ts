@@ -7,3 +7,17 @@ export type LoggerType = {
 export type ConfigType = {
     logLevel: 'silent' | 'verbose';
 };
+
+export type WithLogger = {
+    logger: () => LoggerType;
+};
+
+export type WithConfig = {
+    config: () => ConfigType;
+};
+
+export type WithPinger = {
+    pinger: () => PingerType;
+};
+
+export type IocContext = WithLogger & WithConfig & WithPinger;

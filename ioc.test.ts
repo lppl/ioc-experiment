@@ -1,11 +1,12 @@
 import {createConfig} from './example/creators/createConfig';
 import {createLogger} from './example/creators/createLogger';
 import {createPinger} from './example/creators/createPinger';
+import {IocContext} from './example/types';
 import {createContainer} from './ioc';
 
 console.log('\n\nTest of IoC lib\n\n');
 
-const container = createContainer({
+const container = createContainer<IocContext>({
     pinger: createPinger,
     logger: createLogger,
     config: createConfig,

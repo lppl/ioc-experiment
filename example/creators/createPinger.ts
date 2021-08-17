@@ -1,10 +1,9 @@
-import {LoggerType, PingerType} from '../types';
+import {PingerType, WithLogger} from '../types';
 
-export function createPinger(ctx: {logger: () => LoggerType}): PingerType {
-    return {
+export function createPinger(ctx: WithLogger): () => PingerType {
+    return () => ({
         ping: (url) => {
             ctx.logger().log(`Did ping at ${url}`);
-            return url;
         },
-    };
+    });
 }
